@@ -1,0 +1,9 @@
+Delete , text must have hashtag words
+Tweet preprocess
+ => remove links
+ => remove smileys
+store in csv
+API Call
+Save API result
+Calculation
+Advanced search
