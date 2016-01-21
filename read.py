@@ -1,32 +1,42 @@
 import csv
 import sys
 from alchemyapi import AlchemyAPI
-try:
-	print "File name : "
-	fi = open(sys.argv[1],'r')
-except Exception as e:
-	print e
-	print "Provide file"
-	sys.exit(0)
 
-alchemyapi = AlchemyAPI()
-textRefined = item.text.encode('ascii', 'ignore')
-response = alchemyapi.sentiment_targeted('text', textRefined, SEARCHTERM)
-reader = csv.reader(fi)
-neu,pos,neg = 0,0,0
-for i in reader:
-	if i != '\n':
-		print i
+def readCSV(inFile):
+	fi = open(filename,'rb')
+	reader = csv.reader(fi)
+	lst = []
+	for i in reader:
+		lst.append(i[0])
+	return lst
+
+def writeResult(arr, outFile, search):
+	fi = open(outFile,'wb')
+	SEARCHTERM = search.lower()
+	writer = csv.writer(fi)
+	neg, pos, neu = 0,0,0
+	for item in arr:
+		response = alchemyapi.sentiment_targeted('text', item, SEARCHTERM)
 		try:
-			arr = i[1]
-			if arr == 'neutral':
-				neu += 1
-			elif arr == 'positive':
-				pos +=1
-			elif arr == 'negative':
-				neg +=1
+			respType = response['docSentiment']['type']
 		except:
 			continue
-print "Neg ", neg
-print "Pos ", pos
-print "Neu ", neu
+		if respType == 'neutral': neu += 1
+		elif respType == 'positive': pos += 1
+		elif respType == 'negative': neg += 1
+		lst = [item,respType]
+		writer.writerow(lst)
+	print "Negative: %s, Positive: %s, Neutral: %s " % (neg, pos, neu)
+	fi.close()
+
+if __name__ == "__main__":
+	if len(sys.argv) <= 3:
+		print "usage: .py <readfilename> <writefilename> <search term>"
+		sys.exit(0)
+	#print sys.argv[2]
+	inFile = sys.argv[1]
+	outFile = sys.argv[2]
+	SEARCHTERM = sys.argv[3]
+	alchemyapi = AlchemyAPI()
+	arr = readCSV(inFile)
+	writeResult(arr, outFile, SEARCHTERM)
