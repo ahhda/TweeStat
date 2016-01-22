@@ -3,7 +3,7 @@ import sys
 from alchemyapi import AlchemyAPI
 
 def readCSV(inFile):
-	fi = open(filename,'rb')
+	fi = open(inFile,'rb')
 	reader = csv.reader(fi)
 	lst = []
 	for i in reader:
@@ -29,6 +29,8 @@ def writeResult(arr, outFile, search):
 	print "Negative: %s, Positive: %s, Neutral: %s " % (neg, pos, neu)
 	fi.close()
 
+alchemyapi = AlchemyAPI()
+
 if __name__ == "__main__":
 	if len(sys.argv) <= 3:
 		print "usage: .py <readfilename> <writefilename> <search term>"
@@ -37,6 +39,5 @@ if __name__ == "__main__":
 	inFile = sys.argv[1]
 	outFile = sys.argv[2]
 	SEARCHTERM = sys.argv[3]
-	alchemyapi = AlchemyAPI()
 	arr = readCSV(inFile)
 	writeResult(arr, outFile, SEARCHTERM)

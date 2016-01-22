@@ -40,4 +40,6 @@ curl u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" "https://gateway.wa
 
 curl -G -u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x20-nlc-527/classify?text=qualities%20that%20were%20once%amusing%are%becoming%irritating"
 
-curl -G -u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x20-nlc-527/classify?text=Hello%20donald%20trump%20my%20name%20is%20lauren.I%20look%20up%20to%20you%20because%20you%20are%20a%20great%20republican%20and%20you%20know%20alot%20of%20politics%20thx"
+curl -G -u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x20-nlc-527/classify?text=Hello%20donald%20trump%20my%20name%20is%20lauren.I%20look%20up%20to%20you%20because%20you%20are%20a%20great%20republican%20and%20you%20know%20alot%20of%20politics%20thanks"
+
+curl -G -u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x20-nlc-527/classify?text=you%20are%20a%20great%20republican%20and%20you%20know%20alot%20of%20politics%20thanks"
