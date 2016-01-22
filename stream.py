@@ -4,7 +4,6 @@ from tweepy import Stream
 import tweepy
 import json
 import csv,sys
-import pandas as pd
 import matplotlib.pyplot as plt
 from alchemyapi import AlchemyAPI
 

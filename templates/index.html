@@ -1,7 +1,7 @@
 $def with (arr, imagePath)
 <html>
     <head>
-        <title>Gothons Of Planet Percal #25</title>
+        <title>TweeStat Results</title>
 
     </head>
 <body>
@@ -11,11 +11,11 @@ $def with (arr, imagePath)
 <ul>
 $for item in arr:
 	$if item[1] == 'positive':
-		<em style="color: green; font-size: 1em;"><li>$item[0] | $item[1]</li></em>
+		<em style="color: green; font-size: 1em;"><li>$item[1] | $item[0]</li></em>
 	$elif item[1] == 'negative':
-		<em style="color: red; font-size: 1em;"><li>$item[0] | $item[1]</li></em>
+		<em style="color: red; font-size: 1em;"><li>$item[1] | $item[0]</li></em>
 	$elif item[1] == 'neutral':
-		<em style="color: black; font-size: 1em;"><li>$item[0] | $item[1]</li></em>
+		<em style="color: black; font-size: 1em;"><li>$item[1] | $item[0]</li></em>
 </ul>
 
 
