@@ -1,6 +1,6 @@
-# Python Starter Overview
+# Tweestat 
 
-The Python Starter demonstrates a simple, reusable Python web application.
+An Analytical view of Tweets for deducing public opinion on any trending topic
 
 ## Run the app locally
 
@@ -11,3 +11,21 @@ The Python Starter demonstrates a simple, reusable Python web application.
 5. Access the running app in a browser at http://localhost:8000
 
 [Install Python]: https://www.python.org/downloads/
+
+#What is Tweetstat:
+
+Tweestat originates from the name Tweets Statistics or Stats. This is a web app which aims to provide gov, social researchers, general user and even companies' information on what actually people think about them, their products, public sentiments on controversies or government schemes. Some of the most controversial topics of recent days like odd-even policy in Delhi,Facebook free basics or net-neutrality, President candidate Donald trump. We read news about these topics but we don't know what exactly people think about it. 
+                   This project is actually about that only. Here we extract tweets based on demography, time-durationn, favorite or retweet count. We find similar hashtags trending on the days and then after processing it we apply machine learningg based cognitive solution provided by IBM Watson Alchemy API to dig inside the actual sentiment of the people while writing the tweets. 
+              So, you just have to go to Tweestat link and enter the topic of your interest. Tweestat will do all the analysis and will give the stats of public opinion on that topic!
+            
+#Where does data come from? What is inside the system?
+Tweestat deals with real-time data from Twitter, and get results of public opinion with the help of Alchemy API from IBM Watson. Tweestat = Twitter (source of data) + Stat (statistics)
+
+#What kind of searches can be made:
+Basically all kinds of sentences are perfect candidate for analysis by Alchemy API which is currently limited to English, French and few other languages. Currently we are using only English tweets further we are planning to integrate Google translator to increase the spectrum of tweets specially for the countries like India.
+
+#Why is it unique and who would use it when solved? 
+From a big gov.agency and corporate to a general user or social researcher anyone can use Tweestat for their work. This is the first such kind of attempt in this area which not only focuses on providing cognitive sentiment analysis to corporate but to general public and gov.agencies.
+
+#Privacy: 
+In the whole course of developing Tweestat we have not used profile based research. All the works have been done anonymously. We even don't store profile details with tweets for further development. 
