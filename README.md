@@ -24,7 +24,8 @@ Tweestat deals with real-time data from Twitter, and get results of public opini
 
 [Alchemy API from IBM]:http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/alchemy-language.html
 #What kind of searches can be made:
-Basically all kinds of sentences are perfect candidate for analysis by Alchemy API which is currently limited to English, French and few other languages. Currently we are using only English tweets further we are planning to integrate Google translator to increase the spectrum of tweets specially for the countries like India.
+Basically all kinds of sentences are perfect candidate for analysis by [Alchemy API] which is currently limited to English, French and few other languages. Currently we are using only English tweets further we are planning to integrate Google translator to increase the spectrum of tweets specially for the countries like India.
+[Alchemy API]:http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/alchemy-language.html
 
 #Why is it unique and who would use it when solved? 
 From a big gov.agency and corporate to a general user or social researcher anyone can use Tweestat for their work. This is the first such kind of attempt in this area which not only focuses on providing cognitive sentiment analysis to corporate but to general public and gov.agencies.
