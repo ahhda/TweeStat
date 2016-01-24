@@ -2,7 +2,8 @@
 ![Result for Donald Trump](https://camo.githubusercontent.com/ccbfc174e5ac3f1b218e709841a992e93b7e5c5a/687474703a2f2f74776565737461742e61752d7379642e6d79626c75656d69782e6e65742f7374617469632f646f6e616c647472756d702e706e67)
 
 An Analytical view of Tweets for deducing public opinion on any trending topic
-
+##youtube link
+[![ScreenShot](http://img.youtube.com/vi/rTM2HZAULik/0.jpg)](https://youtu.be/rTM2HZAULik)
 ## Run the app locally
 
 1. Download and extract the code
