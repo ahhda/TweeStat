@@ -1,16 +1,15 @@
 # [TweeStat]
+![Result for Donald Trump](https://camo.githubusercontent.com/ccbfc174e5ac3f1b218e709841a992e93b7e5c5a/687474703a2f2f74776565737461742e61752d7379642e6d79626c75656d69782e6e65742f7374617469632f646f6e616c647472756d702e706e67)
 
 An Analytical view of Tweets for deducing public opinion on any trending topic
 
 ## Run the app locally
 
 1. [Install Python][]
-2. Download and extract the starter code from the Bluemix UI
+2. Download and extract the code
 3. cd into the app directory
 4. Run `python server.py`
 5. Access the running app in a browser at http://localhost:8000
-
-[Install Python]: https://www.python.org/downloads/
 
 #What is Tweetstat:
 
