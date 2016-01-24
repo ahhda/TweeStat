@@ -5,11 +5,10 @@ An Analytical view of Tweets for deducing public opinion on any trending topic
 
 ## Run the app locally
 
-1. [Install Python][]
-2. Download and extract the code
-3. cd into the app directory
-4. Run `python server.py`
-5. Access the running app in a browser at http://localhost:8000
+1. Download and extract the code
+2. cd into the app directory
+3. Run `python server.py`
+4. Access the running app in a browser at http://localhost:8000
 
 #What is Tweetstat:
 
