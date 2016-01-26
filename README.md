@@ -3,12 +3,12 @@
 
 An Analytical view of Tweets for deducing public opinion on any trending topic
 
-##youtube complete project video link
+##Youtube complete project video link
 [![ScreenShot](http://img.youtube.com/vi/uFOC2bvIPYg/0.jpg)](https://youtu.be/uFOC2bvIPYg)
 
-##youtube promo video link
+##Youtube promo video link
 [![ScreenShot](http://img.youtube.com/vi/rTM2HZAULik/0.jpg)](https://youtu.be/rTM2HZAULik)
-## Run the app locally
+## How to Run the app locally
 
 1. Download and extract the code
 2. cd into the app directory
