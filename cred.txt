@@ -1,0 +1,45 @@
+{
+  "credentials": {
+    "url": "https://gateway.watsonplatform.net/natural-language-classifier/api",
+    "username": "26a58077-d3b8-4560-9d28-0bcef71b5869",
+    "password": "G0vp8PShZtaL"
+  }
+}
+
+curl -i -u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" \
+-F training_data=@/home/anuj/projects/twitbot/full_training_dataset.csv \
+-F training_metadata="{\"language\":\"en\",\"name\":\"MyClassifier\"}" \
+"https://gateway.watsonplatform.net/natural-language-classifier/api"
+
+curl -u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" \
+"https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x19-nlc-468"
+
+{
+  "classifier_id" : "563C46x19-nlc-468",
+  "name" : "TutorialClassifier",
+  "language" : "en",
+  "created" : "2016-01-20T13:39:29.862Z",
+  "url" : "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x19-nlc-468",
+  "status" : "Training",
+  "status_description" : "The classifier instance is in its training phase, not yet ready to accept classify requests"
+}
+
+2nd Classifier
+
+{
+  "classifier_id" : "563C46x20-nlc-527",
+  "name" : "TutorialClassifier",
+  "language" : "en",
+  "created" : "2016-01-20T18:54:50.216Z",
+  "url" : "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x20-nlc-527",
+  "status" : "Training",
+  "status_description" : "The classifier instance is in its training phase, not yet ready to accept classify requests"
+}
+
+curl u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x20-nlc-527"
+
+curl -G -u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x20-nlc-527/classify?text=qualities%20that%20were%20once%amusing%are%becoming%irritating"
+
+curl -G -u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x20-nlc-527/classify?text=Hello%20donald%20trump%20my%20name%20is%20lauren.I%20look%20up%20to%20you%20because%20you%20are%20a%20great%20republican%20and%20you%20know%20alot%20of%20politics%20thanks"
+
+curl -G -u "26a58077-d3b8-4560-9d28-0bcef71b5869":"G0vp8PShZtaL" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/563C46x20-nlc-527/classify?text=you%20are%20a%20great%20republican%20and%20you%20know%20alot%20of%20politics%20thanks"

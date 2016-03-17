@@ -1,0 +1,23 @@
+$def with (arr, imagePath)
+<html>
+    <head>
+        <title>TweeStat Results</title>
+
+    </head>
+<body>
+
+<center><img src="./$imagePath" alt="Comparison Chart" align="middle" width="500px" height="500px"/></center>
+
+<ul>
+$for item in arr:
+	$if item[1] == 'positive':
+		<em style="color: green; font-size: 1em;"><li>$item[1] | $item[0]</li></em>
+	$elif item[1] == 'negative':
+		<em style="color: red; font-size: 1em;"><li>$item[1] | $item[0]</li></em>
+	$elif item[1] == 'neutral':
+		<em style="color: black; font-size: 1em;"><li>$item[1] | $item[0]</li></em>
+</ul>
+
+
+</body>
+</html>

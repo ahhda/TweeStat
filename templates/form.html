@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TweeStat</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="./static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./static/css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">TweeStat</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    
+                    
+                    <li class="page-scroll">
+                        <a href="#contact">Check Me Out !</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="./static/img/profile.png" alt="">
+                    <div class="intro-text">
+                        
+                        <hr class="star-light">
+                        <span class="skills">An Analytical view of Tweets for deducing public opinion on any trending topic</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+
+    
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Something to Start with</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <form action="/" method="POST">
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Topic</label>
+                                <input type="text" name="search_term" class="form-control" placeholder="Topic: e.g. Donald Trump" id="name" required data-validation-required-message="Please enter a topic">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Number of tweets to mine On</label>
+                                <input type="number" name="num" class="form-control" placeholder="Number of Tweets:  e.g. 100" id="phone" required data-validation-required-message="Please enter number of tweets.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>In this project we extract tweets based on demography, time-duration, and relevance of the tweets based on its favourite and retweet count. We find trending hashtags similar to the topic of interest and then after processing it we apply machine learing based intelligent cognitive solution provided by IBM Watson Alchemy API to judge the actual sentiment people tried to convey while writing the tweets.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Tweestat is a portmanteau of Twitter and Statistics. It aims to provide professionals and companies in both the public and private sectors useful information about public opinions and sentiments on topics relevant to them, which in turn will enable them to make an informed decisions. For example, a TV  production house might use this to judge the public response to an episode of a show, and improve the show accordingly. </p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="https://github.com/ahhda/TweeStat" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Github
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+    <!-- jQuery -->
+    <script src="./static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./static/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="./static/js/classie.js"></script>
+    <script src="./static/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="./static/js/jqBootstrapValidation.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="./static/js/freelancer.js"></script>
+
+</body>
+
+</html>
