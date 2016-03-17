@@ -140,6 +140,26 @@ def saveData(SEARCHTERM,FILE,NUM):
 	# 	#decoded = json.loads(item)
 	# 	# Also, we convert UTF-8 to ASCII ignoring all bad characters sent by users
 	# 	#print '@%s: %s' % (decoded['user']['screen_name'], decoded['text'].encode('ascii', 'ignore'))
+
+	arr = tweepy.Cursor(api.search, q=SEARCHTERM, lang="en").items(NUM)
+	for item in arr:
+		try:
+			item.text = item.text.lower().encode('ascii', 'ignore')
+			# Remove reduntant retweets and only check English tweets
+			if (item.retweeted == False) and ((SEARCHTERM in item.text) or HASHTAG in item.text) and ("rt " not in item.text):
+				item.text = item.text.replace(HASHTAG,SEARCHTERM)
+				fi.writerow([item.text])
+				#print item.text+'\n'
+			# textRefined = item.text.encode('ascii', 'ignore')
+			# response = alchemyapi.sentiment_targeted('text', textRefined, SEARCHTERM)
+			# print textRefined, response["docSentiment"]["type"]
+			#fi.writerow([textRefined,response["docSentiment"]["type"]])
+		except Exception as e:
+			print e
+			continue
+		#decoded = json.loads(item)
+		# Also, we convert UTF-8 to ASCII ignoring all bad characters sent by users
+		#print '@%s: %s' % (decoded['user']['screen_name'], decoded['text'].encode('ascii', 'ignore'))
 	FILE.close()
 
 access_token = "2895960169-Q8hQuNMLpybYSMgRba9g1hfS6gL5XGzzpCdt305"
