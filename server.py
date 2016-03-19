@@ -1,13 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from read import writeResult, readCSV
+from read import writeResult, readCSV, threadCaller
 from stream import saveData
 import os
 import web
 import csv,sys
 
 urls = (
-	'/', 'Index'
+	'/', 'Index',
+	'/api/(.*)','get_api'
 )
 
 render = web.template.render('templates/')
@@ -28,6 +29,23 @@ def readData(filename):
 		lst.append(i)
 	return lst, [pos,neg,neu]
 
+def getReadings(lst):
+	mylst = []
+	neu, pos, neg = 0,0,0
+	for i in lst:
+		respType = i[1]
+		if respType == 'neutral': neu += 1
+		elif respType == 'positive': pos += 1
+		elif respType == 'negative': neg += 1
+		mylst.append(i)
+	print "Total Final Negative: %s, Positive: %s, Neutral: %s " % (neg, pos, neu)
+	return mylst, [pos,neg,neu]
+
+class get_api:
+	def GET(self, name):
+		print name
+		return name
+
 class Index:
 	def GET (self):
 		return render.form()
@@ -38,12 +56,19 @@ class Index:
 		numberTweets = form.num
 		filename = searchTerm.replace(" ","")+".csv"
 		#save tweets to csv file
-		saveData(searchTerm, filename, numberTweets)
+		arr = saveData(searchTerm, filename, numberTweets)
+		#print arr
+		#print len(arr)
+
 		#read the saved file
-		arr = readCSV(filename)
+		#arr = readCSV(filename)
 		#Use Alchemy API to get sentiment and save as csv
-		writeResult(arr, "out"+filename, searchTerm)
-		arr, info = readData("out"+filename)
+		print "Entering writeresult"
+		alchemyResult = threadCaller(arr, "out"+filename, searchTerm)
+		#alchemyResult = writeResult(arr, "out"+filename, searchTerm)
+		arr, info = getReadings(alchemyResult)
+		print "after write result"
+		# arr, info = readData("out"+filename)
 		#Save Graph
 		keyword = ["Positive","Negative","Neutral"]
 		plt.clf()

@@ -136,7 +136,7 @@ class AlchemyAPI:
 
     s = requests.Session()
 
-    def __init__(self):
+    def __init__(self, myapikey):
         """	
         Initializes the SDK so it can send requests to AlchemyAPI for analysis.
         It loads the API key from api_key.txt and configures the endpoints.
@@ -162,7 +162,7 @@ class AlchemyAPI:
                 sys.exit(0)
             else:
                 # setup the key
-                self.apikey = key
+                self.apikey = myapikey
 
             # Close file
             f.close()

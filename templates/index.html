@@ -1,4 +1,4 @@
-$def with (arr, imagePath)
+
 <html>
     <head>
         <title>TweeStat Results</title>
@@ -6,18 +6,93 @@ $def with (arr, imagePath)
     </head>
 <body>
 
-<center><img src="./$imagePath" alt="Comparison Chart" align="middle" width="500px" height="500px"/></center>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://static.pureexample.com/js/flot/excanvas.min.js"></script>
+<script src="http://static.pureexample.com/js/flot/jquery.flot.min.js"></script>
+<script src="http://static.pureexample.com/js/flot/jquery.flot.pie.min.js"></script>
+ 
+<!-- CSS -->
+<style type="text/css">
+#flotcontainer {
+    width: 600px;
+    height: 400px;
+    text-align: left;
+}
+</style>
+ 
+ 
+<!-- Javascript -->
+<script type="text/javascript">
+$(function () { 
+    var data = [
+        {label: "Neutral", data: {{ info[2] }} },
+        {label: "Positive", data: {{ info[0] }} },
+        {label: "Negative", data: {{ info[1] }} },
+    ];
+ 
+    var options = {
+            series: {
+                pie: {
+                    show: true,
+                    radius: 1,
+                    tilt: 0.5,
+                    label:{                        
+                        radius: 3/4,
+                        formatter: function (label, series) {
+                            return '<div style="border:1px solid gray;font-size:8pt;text-align:center;padding:5px;color:white;">' + label + '<br/>' +   
+                            Math.round(series.percent) + '%</div>';
+                        },
+                        background: {
+                            opacity: 0.5,
+                            color: '#000'
+                        }
+                    }
+                }
+                    },
+            legend: {
+                show: false
+            },
+            grid: {
+                hoverable: true,
+                clickable: true
+            }
+         };
+ 
+    $.plot($("#flotcontainer"), data, options);  
+ 
+    $("#flotcontainer").bind("plothover", function(event, pos, obj){
+        if (!obj){return;}
+            percent = parseFloat(obj.series.percent).toFixed(2);
+ 
+        var html = [];
+        html.push("<div style=\"flot:left;width:105px;height:20px;text-align:center;border:1px solid black;background-color:", obj.series.color, "\">",
+                  "<span style=\"font-weight:bold;color:white\">", obj.series.label, " (", percent, "%)</span>",
+                  "</div>");
+ 
+            $("#showInteractive").html(html.join(''));        
+    });
+});
+</script>
+ 
+<!-- HTML -->
+<div>
+        Percentage : <span id="showInteractive"></span>
+</div>
+<center><div id="flotcontainer"></div></center>
 
 <ul>
-$for item in arr:
-	$if item[1] == 'positive':
-		<em style="color: green; font-size: 1em;"><li>$item[1] | $item[0]</li></em>
-	$elif item[1] == 'negative':
-		<em style="color: red; font-size: 1em;"><li>$item[1] | $item[0]</li></em>
-	$elif item[1] == 'neutral':
-		<em style="color: black; font-size: 1em;"><li>$item[1] | $item[0]</li></em>
+{% for item in arr %}
+	{% if item[1] == 'positive' %}
+		<em style="color: green; font-size: 1em;"><li>{{ item[1] }} | <a href="https://twitter.com/statuses/{{ item[3] }}" link="green">{{item[0]}}</a></li></em>
+	{% elif item[1] == 'negative' %}
+		<em style="color: red; font-size: 1em;"><li>{{ item[1] }} | <a href="https://twitter.com/statuses/{{ item[3] }}" link="red">{{ item[0] }}</a></li></em>
+	{% elif item[1] == 'neutral' %}
+		<em style="color: black; font-size: 1em;"><li>{{ item[1] }} | <a href="https://twitter.com/statuses/{{ item[3] }}" link="black">{{ item[0] }}</a></li></em>
+	{% endif %}
+{% endfor %}
 </ul>
-
+<center><img src="./{{ imagePath }}" alt="Comparison Chart" align="middle" width="500px" height="500px"/></center>
 
 </body>
 </html>
